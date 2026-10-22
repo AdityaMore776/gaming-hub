@@ -1,0 +1,6 @@
+# Real credentials stay out of version control
+config/config.php
+
+# Uploaded cover images
+uploads/covers/*
+!uploads/covers/.gitkeep

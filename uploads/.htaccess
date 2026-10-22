@@ -1,0 +1,7 @@
+# Uploaded files are images only. Never run scripts from this folder.
+<FilesMatch "\.(php|php\d|phtml|phar|pl|py|cgi|sh|html?|svg|js)$">
+    Require all denied
+</FilesMatch>
+RemoveHandler .php .phtml .phar
+RemoveType .php .phtml .phar
+Options -Indexes -ExecCGI
