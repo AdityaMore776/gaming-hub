@@ -9,6 +9,10 @@ four CSE students. It helps players answer three questions:
 
 Everything runs locally on PHP and MySQL. There are no external APIs, API keys, AI services or paid services.
 
+> ### ▶ Just want to run it?
+> Follow the step-by-step **[XAMPP setup guide (XAMPP_SETUP.md)](XAMPP_SETUP.md)**: install XAMPP, copy the
+> folder, import one SQL file, open <http://localhost/gaming-hub/>. About 15 minutes, no coding needed.
+
 ---
 
 ## Features
@@ -30,8 +34,8 @@ Everything runs locally on PHP and MySQL. There are no external APIs, API keys, 
 
 * HTML5, CSS3, **Bootstrap 5.3.8** (official jsDelivr CDN), Google Fonts (Archivo, Figtree)
 * **Vanilla JavaScript**: no frameworks
-* **PHP** (developed and tested on **PHP 8.5.12**; the code uses nothing newer than PHP 8.1)
-* **MySQL** (developed and tested on **MySQL 8.4.9 LTS**)
+* **PHP 8.1 or newer**: tested on **PHP 8.5.12** and on **XAMPP 8.2.12** (PHP 8.2.12)
+* **MySQL / MariaDB**: tested on **MySQL 8.4.9 LTS** and **MariaDB 10.4.32** (the version in XAMPP)
 * PDO with prepared statements, PHP sessions, `password_hash()` / `password_verify()`, GD for image processing
 
 No React/Vue/Angular, Node.js, Tailwind, Firebase/Supabase, game APIs or AI services are used.
@@ -44,16 +48,18 @@ No React/Vue/Angular, Node.js, Tailwind, Firebase/Supabase, game APIs or AI serv
 
 **Option A — XAMPP (easiest on Windows/macOS/Linux)**
 
-1. Download XAMPP from <https://www.apachefriends.org> (choose the newest PHP 8.x build) and install it.
+1. Download **XAMPP 8.2.12** from <https://www.apachefriends.org> and install it. (Gaming Hub needs PHP 8.1+,
+   so XAMPP 8.0.x will not work.)
 2. Open the XAMPP Control Panel and start **Apache** and **MySQL**.
 
-> XAMPP ships MariaDB instead of Oracle MySQL. The schema only uses standard features (foreign keys, CHECK
-> constraints, a view), so it is expected to work, but our own testing was done with MySQL 8.4.9 and PHP 8.5.12.
+The full step-by-step walkthrough, with a demo checklist and a troubleshooting table, is in
+**[XAMPP_SETUP.md](XAMPP_SETUP.md)**.
 
 **Option B — standalone PHP + MySQL**
 
 Install PHP 8.1 or newer and MySQL 8.x, and make sure these PHP extensions are enabled in `php.ini`:
-`pdo_mysql`, `mbstring`, `fileinfo`, `gd`.
+`pdo_mysql`, `mbstring`, `fileinfo`, `gd`. (**XAMPP has `gd` switched off by default.** Turn it on as shown in
+[XAMPP_SETUP.md, Step 3](XAMPP_SETUP.md#step-3--turn-on-the-gd-image-extension), or admin cover uploads won't work.)
 
 Check your versions with `php -v` and `mysql --version`.
 
@@ -241,7 +247,7 @@ gaming-hub/
 | `could not find driver` | Enable `extension=pdo_mysql` in `php.ini` and restart Apache / the PHP server. |
 | Page shows PHP code instead of the website | You opened the file directly (`file://…`). Use `http://localhost/...` through Apache or `php -S`. |
 | Styles or links broken when the project is in a sub-folder | Set `'base_url' => '/your-folder-name'` in `config/config.php`. |
-| Cover upload: "This server cannot process that image type" | Enable `extension=gd` in `php.ini`. |
+| Cover upload: "Enable the GD extension in php.ini" | Remove the `;` in front of `extension=gd` in `php.ini` and restart Apache (XAMPP has it off by default). |
 | Cover upload fails silently | Check `upload_max_filesize` (≥ 2M) and `post_max_size` in `php.ini`, and that `uploads/covers` is writable. |
 | "Your session expired" after submitting a form | The page was open a long time or you logged out in another tab. Reload and try again. |
 | Port 3306 or 80 already in use | Stop the other MySQL/web server, or change the port in XAMPP and in `config/config.php`. |

@@ -115,7 +115,7 @@ function verify_csrf(): void
     $sent = $_POST['csrf_token'] ?? ($_SERVER['HTTP_X_CSRF_TOKEN'] ?? '');
     if (!is_string($sent) || !hash_equals(csrf_token(), $sent)) {
         if (wants_json()) {
-            json_response(['ok' => false, 'message' => 'Your session expired. Please reload the page.'], 419);
+            json_response(['ok' => false, 'message' => 'Your session expired. Please reload the page.'], 403);
         }
         flash('danger', 'Your session expired or the form was submitted twice. Please try again.');
         redirect(safe_return_path($_POST['return_to'] ?? null, 'index.php'));
