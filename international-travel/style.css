@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #1b1b2f;
+  color: #f4f4f4;
+}
+
+a {
+  color: #ff7a59;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #12121f;
+  padding: 15px 30px;
+  border-bottom: 3px solid #ff7a59;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff7a59;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.menu a {
+  color: #f4f4f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  color: #ff7a59;
+}
+
+/* Home page */
+.welcome {
+  background: linear-gradient(135deg, #ff7a59, #8e44ad);
+  padding: 80px 30px;
+}
+
+.welcome h1 {
+  font-size: 44px;
+  margin: 0 0 10px 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.surprise {
+  border: 2px dashed #ff7a59;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+#surpriseResult {
+  font-size: 22px;
+  color: #ffd166;
+}
+
+.regions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.region {
+  flex: 1;
+  min-width: 220px;
+  background-color: #2a2a45;
+  padding: 30px;
+  text-decoration: none;
+  color: #f4f4f4;
+  border-left: 6px solid #8e44ad;
+}
+
+.region:hover {
+  background-color: #3a3a5c;
+}
+
+.big {
+  display: block;
+  font-size: 30px;
+  color: #ff7a59;
+  margin-bottom: 8px;
+}
+
+/* Trip lists */
+.intro {
+  color: #b8b8d1;
+  font-style: italic;
+}
+
+.trip {
+  background-color: #2a2a45;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-left: 6px solid #ff7a59;
+}
+
+.trip-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.trip h3 {
+  margin: 0;
+  color: #ffd166;
+}
+
+.details {
+  display: none;
+  border-top: 1px solid #44446a;
+  padding-top: 10px;
+  color: #b8b8d1;
+}
+
+/* Buttons */
+button {
+  background-color: #ff7a59;
+  color: #1b1b2f;
+  border: none;
+  padding: 10px 18px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffd166;
+}
+
+/* Sign up form */
+.signup-box {
+  background-color: #2a2a45;
+  padding: 25px;
+}
+
+.signup-box label {
+  display: block;
+  margin-top: 12px;
+  color: #ffd166;
+}
+
+.signup-box input,
+.signup-box select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background-color: #1b1b2f;
+  color: #f4f4f4;
+  border: 1px solid #8e44ad;
+}
+
+.total {
+  font-size: 22px;
+  color: #ff7a59;
+}
+
+#error {
+  color: #ff6b6b;
+}
+
+/* Booking ticket */
+.ticket {
+  display: none;
+  background-color: #f4f4f4;
+  color: #1b1b2f;
+  padding: 25px;
+  border: 3px dashed #8e44ad;
+  border-radius: 10px;
+}
+
+.ticket h2 {
+  color: #8e44ad;
+  margin-top: 0;
+}
+
+.ticket a {
+  color: #8e44ad;
+}
+
+/* Footer */
+.bottom {
+  text-align: center;
+  color: #b8b8d1;
+  padding: 20px;
+  border-top: 1px solid #44446a;
+  margin-top: 40px;
+}
