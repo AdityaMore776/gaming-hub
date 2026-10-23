@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Travels - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>India Travels</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="beaches.html">Beach Trips</a>
+      <a href="mountains.html">Mountain Trips</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Register for a Trip</h2>
+
+    <form id="registerForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email">
+
+      <label for="phone">Phone Number</label>
+      <input type="text" id="phone">
+
+      <label for="trip">Choose a Trip</label>
+      <select id="trip">
+        <option value="">-- Select --</option>
+        <option>Goa</option>
+        <option>Kerala</option>
+        <option>Andaman Islands</option>
+        <option>Manali</option>
+        <option>Darjeeling</option>
+        <option>Ooty</option>
+      </select>
+
+      <label for="people">Number of People</label>
+      <input type="number" id="people" min="1" value="1">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 India Travels</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
